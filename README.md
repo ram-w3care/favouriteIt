@@ -48,9 +48,8 @@ Checks if the item with the specified ``` entryId ``` has been favorited.
 - ```entryId (required):``` The unique ID of the item to check.
 ##### Returns:
 ``` true ``` if the item is favorited, ``` false ``` otherwise.
-``` bash
+
 #### showFavourite()
-```
 Retrieves an array of all entry IDs that have been favorited.
 Returns:
 An array of entry IDs that have been favorited.
