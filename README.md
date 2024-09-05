@@ -78,12 +78,12 @@ Here's an example of how to integrate it into your templates:
 	  </ul>
 	</article>
   {% endfor %}
-```
+
 #### Using JavaScript
 For a smooth user experience, use AJAX to handle favorite actions:
+```
 document.addEventListener("DOMContentLoaded", function () {
   const addFavButtons = document.querySelectorAll(".add_fav");
-
   addFavButtons.forEach(function (button) {
     button.addEventListener("click", function () {
       const id = this.getAttribute("data-id");
