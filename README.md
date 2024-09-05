@@ -47,22 +47,22 @@ Here's an example of how to integrate it into your templates:
 	{% set featured = entry.featureImage.one() %}
 	{% set postCategories = entry.postCategories.all() %}
 	{% set itemExist = isItemFavourited(entry.id) %}
-			<article>
-				<figure class="card-img-top m-0 overflow-hidden bsb-overlay-hover">
-				  <a href="#!">
-					<img src="{{ featured.url }}" alt="{{ entry.title }}">
-				  </a>
-				</figure>
-					<h2>
-					  <a href="{{ siteUrl('blog/entry.url') }}">{{  entry.title }}</a>
-					</h2>
-				  <ul>
-					<li>
-						<button type="button" data-id="{{ entry.id }}" class="add_fav" data-csrf-token-value="{{ craft.app.request.getCsrfToken() }}">Add to Favourite</button>
-					</li>
-				  </ul>
-			</article>
-		  {% endfor %}
+	<article>
+	  <figure class="card-img-top m-0 overflow-hidden bsb-overlay-hover">
+	    <a href="#!">
+	      <img src="{{ featured.url }}" alt="{{ entry.title }}" />
+	    </a>
+	  </figure>
+	  <h2>
+	    <a href="{{ siteUrl('blog/entry.url') }}">{{ entry.title }}</a>
+	  </h2>
+	  <ul>
+	    <li>
+	      <button type="button" data-id="{{ entry.id }}" class="add_fav" data-csrf-token-value="{{ craft.app.request.getCsrfToken() }}">Add to Favourite</button>
+	    </li>
+	  </ul>
+	</article>
+  {% endfor %}
 ```
 #### Using AJAX
 For a smooth user experience, use AJAX to handle favorite actions:
