@@ -35,9 +35,9 @@ composer require ram-suthar/craft-favourite-it
 
 ## Usage
 
-``` bash
 #### Action
 The plugin's primary functionality is accessible through the following action:
+``` bash
 actions/favourite-it/default/index
 ```
 ### Template Tags
@@ -45,9 +45,9 @@ The plugin provides the following template tags for use in your templates:
 ``` bash #### isItemFavourited(entryId) ```
 Checks if the item with the specified ``` bash entryId ``` has been favorited.
 ##### Parameters:
-- ``` bash entryId (required):``` The unique ID of the item to check.
+- ``` entryId (required):``` The unique ID of the item to check.
 ##### Returns:
-``` bash true ``` if the item is favorited, ``` bash false ``` otherwise.
+```  true ``` if the item is favorited, ```  false ``` otherwise.
 ``` bash
 #### showFavourite()
 ```
@@ -55,12 +55,6 @@ Retrieves an array of all entry IDs that have been favorited.
 Returns:
 An array of entry IDs that have been favorited.
 
-
-### Favourite It Action
-The plugin's core functionality is exposed via the following action:
-``` bash
-actions/favourite-it/default/index
-```
 Here's an example of how to integrate it into your templates:
 
 ``` bash
