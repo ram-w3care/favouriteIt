@@ -42,12 +42,12 @@ actions/favourite-it/default/index
 ```
 ### Template Tags
 The plugin provides the following template tags for use in your templates:
-``` bash #### isItemFavourited(entryId) ```
-Checks if the item with the specified ``` bash entryId ``` has been favorited.
+``` isItemFavourited(entryId) ```
+Checks if the item with the specified ``` entryId ``` has been favorited.
 ##### Parameters:
-- ``` entryId (required):``` The unique ID of the item to check.
+- ```entryId (required):``` The unique ID of the item to check.
 ##### Returns:
-```  true ``` if the item is favorited, ```  false ``` otherwise.
+``` true ``` if the item is favorited, ``` false ``` otherwise.
 ``` bash
 #### showFavourite()
 ```
