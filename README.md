@@ -84,9 +84,9 @@ For a smooth user experience, use AJAX to handle favorite actions:
 ``` bash
 $(document).ready(function () {
         $(".add_fav").click(function () {
-			let id = $(this).data("id");
+	let id = $(this).data("id");
       let button = $(this);
-			const csrfToken = $(this).data("csrf-token-value");
+	const csrfToken = $(this).data("csrf-token-value");
             $.ajax({
               url: "{{ siteUrl('actions/favourite-it/default/index') }}",
               data: { id: id, CRAFT_CSRF_TOKEN: csrfToken },
@@ -104,3 +104,4 @@ $(document).ready(function () {
             });
         });
       });
+```
