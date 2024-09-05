@@ -79,8 +79,41 @@ Here's an example of how to integrate it into your templates:
 	</article>
   {% endfor %}
 ```
-#### Using AJAX
+#### Using JavaScript
 For a smooth user experience, use AJAX to handle favorite actions:
+document.addEventListener("DOMContentLoaded", function () {
+  const addFavButtons = document.querySelectorAll(".add_fav");
+
+  addFavButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      const id = this.getAttribute("data-id");
+      const csrfToken = this.getAttribute("data-csrf-token-value");
+
+      const formData = new FormData();
+      formData.append("id", id);
+      formData.append("CRAFT_CSRF_TOKEN", csrfToken);
+
+      fetch('{{ siteUrl("actions/favourite-it/default/index") }}', {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.status === 1) {
+            this.textContent = "Remove from Favourite";
+          } else if (data.status === 0) {
+            this.textContent = "Add to Favourite";
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          window.location.reload();
+        });
+    });
+  });
+});
+
+#### Using jQuery
 ``` bash
 $(document).ready(function () {
         $(".add_fav").click(function () {
