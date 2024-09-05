@@ -30,33 +30,43 @@ composer require ram-suthar/craft-favourite-it
 ```
 
 ### Features
+
 - Supports Both Guests and Logged-in Users: Everyone can mark their favorites.
 - Single-Click Favorite: Easily add any entry to favorites with a single click.
 
 ## Usage
 
 #### Action
+
 The plugin's primary functionality is accessible through the following action:
-``` bash
+
+```bash
 actions/favourite-it/default/index
 ```
+
 ### Template Tags
+
 The plugin provides the following template tags for use in your templates:
-``` isItemFavourited(entryId) ```
-Checks if the item with the specified ``` entryId ``` has been favorited.
+`isItemFavourited(entryId)`
+Checks if the item with the specified `entryId` has been favorited.
+
 ##### Parameters:
-- ```entryId (required):``` The unique ID of the item to check.
+
+- `entryId (required):` The unique ID of the item to check.
+
 ##### Returns:
-``` true ``` if the item is favorited, ``` false ``` otherwise.
+
+`true` if the item is favorited, `false` otherwise.
 
 #### showFavourite()
+
 Retrieves an array of all entry IDs that have been favorited.
 Returns:
 An array of entry IDs that have been favorited.
 
 Here's an example of how to integrate it into your templates:
 
-``` bash
+```bash
 {% set blogs = craft.entries().section('blog').all() %}
 	{% for entry in blogs %}
 	{% set featured = entry.featureImage.one() %}
@@ -81,8 +91,10 @@ Here's an example of how to integrate it into your templates:
 ```
 
 #### Using JavaScript
+
 For a smooth user experience, use AJAX to handle favorite actions:
-``` bash
+
+```bash
 document.addEventListener("DOMContentLoaded", function () {
   const addFavButtons = document.querySelectorAll(".add_fav");
   addFavButtons.forEach(function (button) {
@@ -114,8 +126,10 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 ```
+
 #### Using jQuery
-``` bash
+
+```bash
 $(document).ready(function () {
         $(".add_fav").click(function () {
 	let id = $(this).data("id");
